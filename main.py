@@ -9,7 +9,8 @@ app = FastAPI()
 # Load the tokenizer and model
 # Load pre-trained tokenizer
 tokenizer = AutoTokenizer.from_pretrained(
-                                 'airesearch/wangchanberta-base-att-spm-uncased')
+                                 'airesearch/wangchanberta-base-att-spm-uncased',
+                                 revision='main')
 
 model = AutoModelForSequenceClassification.from_pretrained(
                                   'airesearch/wangchanberta-base-att-spm-uncased',
