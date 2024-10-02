@@ -15,7 +15,6 @@ tokenizer = AutoTokenizer.from_pretrained(
 model = AutoModelForSequenceClassification.from_pretrained(
                                   'airesearch/wangchanberta-base-att-spm-uncased',
                                   revision='finetuned@wisesight_sentiment', num_labels=4)
-
 class SentimentRequest(BaseModel):
     text: str
 
@@ -27,7 +26,7 @@ class SentimentResponse(BaseModel):
 async def predict_sentiment(request: SentimentRequest):
     try:
         # Tokenize the input text
-        inputs = tokenizer(request.text, return_tensors="pt", truncation=True, max_length=512)
+        inputs = tokenizer(request.text, return_tensors="pt", truncation=True, max_length=416)
         
         # Make prediction
         with torch.no_grad():
