@@ -1,5 +1,4 @@
 __pycache__
 *.pyc
 .env
-fast_sentiment
-sentiment-analysis
+sentiment
